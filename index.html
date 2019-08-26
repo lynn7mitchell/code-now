@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Code Now</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+    function button(){
+      alert("Thank you for you support!")
+    }
+  </script>
+</head>
+<body>
+
+  <div class="desktop-menu">
+    <div class="menu-brand">
+      <a href="#"><img src="img/logo-final.svg" alt="Logo"></a>
+    </div>
+    <div class="menu-left">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#Blog">Blog</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu">
+    <input type="checkbox" id="menu">
+    <label for="menu"><a href="#"><img src="img/logo-final.svg" alt="Logo"></a></label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#mobile-contact">Contact</a></li>
+        <li><a href="#blog">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="video">
+    <iframe width="760" height="515" src="https://www.youtube.com/embed/C3uLinQPp3w" frameborder="0" allow="autoplay; encrypted-media"  allowfullscreen></iframe>
+</div>
+
+
+  <div class="about-us" id="about">
+    <div class="about-us-content">
+      <h1>About Us</h1>
+      <p>CodeNow is a 501(c)(3) non-profit teaching high school students how to solve meaningful problems through coding. Our program is beginner friendly and will walk you through everything necessary to design and develop your own websites.
+      </p>
+    </div>
+
+  </div>
+
+
+
+
+  <div class="icons">
+    <div class="location mobile-icons">
+      <img src="img/location.svg" alt="location">
+      <h2>3 Locations</h2>
+      <p>We are located in Bay Area, <br>
+        California, Chicago, Illinois, <br>
+        and New York, New York. <br>
+        With more locations to come
+     </p>
+    </div>
+    <div class="computer mobile-icons">
+      <img src="img/pc.svg" alt="Computer">
+      <h2>Code The Future</h2>
+      <p>
+        You will learn how to code in <br>
+        HTML 5, CSS 3, and Javacript. <br>
+        With These Three Languages <br>
+        you will be able to maake <br>
+        any website that you set <br>
+        your mind to.
+     </p>
+    </div>
+    <div class="school mobile-icons">
+      <img src="img/school.svg" alt="school">
+      <h2>Develop A Career</h2>
+      <p>
+        During this course you will <br>
+        learn what many people go <br>
+        to college to learn. This can <br>
+        open up scholarship and/or <br>
+        career opportunities for <br>
+        your future.
+     </p>
+    </div>
+  </div>
+
+<div class="blue-stripe" id="contact">
+    <h3>Over six years, we've helped more than  <br> 2,000 students learn to code</h3>
+  <div class="stats">
+      <div class="stats-content stats-content-mobile">
+        <h2>49%</h2>
+        <p>Female Alumni</p>
+      </div>
+      <div class="stats-content stats-content-mobile">
+        <h2>75%</h2>
+        <p>First Time Programmers</p>
+      </div>
+      <div class="stats-content stats-content-mobile">
+        <h2>89%</h2>
+        <p>Interested in CS in College</p>
+      </div>
+      <div class="stats-content stats-content-mobile">
+        <h2>89%</h2>
+        <p>Student Satisfaction Rating</p>
+      </div>
+  </div>
+
+</div>
+<div id="blog">
+  
+</div>
+<div class="contact">
+  <div class="contact-info">
+    <h2>Contact</h2>
+    <p>Call: 408-528-7754</p>
+    <p>Email: hello@codenow.org</p>
+  </div>
+  <div class="sign-up">
+    <h2>Sign Up For Our<br>Newsletter</h2>
+    <input type="text" name="Email" value="Email">
+    <a href="#" class="button" onclick=button()>Donate</a>
+  </div>
+</div>
+
+<div class="mobile-wrapper" id="mobile-contact">
+  <div class="contact-mobile">
+    <div class="contact-info">
+      <h2>Contact</h2>
+      <p>Call: 408-528-7754</p>
+      <p>Email: hello@codenow.org</p>
+    </div>
+    <div class="sign-up">
+      <h2>Sign Up For Our<br>Newsletter</h2>
+      <input type="text" name="Email" value="Email">
+        <a href="#" class="button" onclick=button()>Submit</a>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    function mycallback(json) {
+      for (var i = 0; i < json.feed.entry.length; i++) {
+        for (var j = 0; j < json.feed.entry[i].link.length; j++) {
+          if (json.feed.entry[i].link[j].rel == 'alternate') {
+            var postUrl = json.feed.entry[i].link[j].href;
+            break;
+          }
+        }
+        var postTitle = json.feed.entry[i].title.$t;
+        var postAuthor = json.feed.entry[i].author[0].name.$t;
+        var postSummary = json.feed.entry[i].summary.$t;
+        var entryShort = postSummary.substring(0,400);
+        var entryEnd = entryShort.lastIndexOf(" ");
+        var postContent = entryShort.substring(0, entryEnd) + '...';
+        // var postImage = json.feed.entry[i].media$thumbnail.url.replace('s72-c/','s1600/');
+        var item = document.createElement('p');
+        item.innerHTML = '<div class="wrapper"><img src="' + '"/><h3><a href=' + postUrl + '>' + postTitle + '</h3></a><span>'+ postAuthor + '</span><p>' + postContent + '</p></div>';
+        document.getElementById("blog").appendChild(item);
+      }
+    }
+  </script>
+  <script src="https://fakecodenow.blogspot.com/feeds/posts/summary?orderby=published&max-results=5&alt=json-in-script&callback=mycallback"></script>
+</div>
+</body>
+</html>

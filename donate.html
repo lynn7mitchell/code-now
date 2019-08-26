@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>css-grid</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript">
+    function button(){
+      alert("Thank you for you support!")
+    }
+  </script>
+</head>
+<body>
+
+  <div class="desktop-menu">
+    <div class="menu-brand">
+      <a href="index.html"><img src="img/logo-final.svg" alt="Logo"></a>
+    </div>
+    <div class="menu-left">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+    <div class="menu-right">
+      <a href="#" class="menu-right button">Donate</a>
+      <a href="volunteer.html" class="menu-right button">Volunteer</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu">
+    <input type="checkbox" id="menu">
+    <label for="menu"><a href="#"><img src="img/logo-final.svg" alt="Logo"></a></label>
+    <div class="menu-content">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#mobile-contact">Contact</a></li>
+        <li><a href="#" class="button">Donate</a></li>
+        <li><a href="volunteer.html" class="button">Volunteer</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="donate">
+    <div class="donate-content">
+      <h1>Donate</h1>
+    </div>
+
+  </div>
+
+  <div class="donate-form">
+    <input type="text" name="Name" value="First Name">
+    <input type="text" name="Name" value="Last Name">
+  </div>
+  <div class="donate-form">
+    <input type="text" name="email" value="Email">
+  </div>
+  <div class="donate-form">
+    <input type="text" name="card-number" value="Card Number">
+    <input type="text" name="Experation" value="Date">
+    <input type="text" name="CVV" value="CVV">
+  </div>
+<div class="donate-form">
+  <a href="#" class="button" onclick=button()>Donate</a>
+</div>
+
+</body>
+</html>
